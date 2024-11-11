@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('no_telp', 20)->nullable();
             $table->string('status', 50);
             $table->unsignedBigInteger('id_pengguna');
-            $table->foreign('id_pengguna')->references('id')->on('penggunas')->onDelete('cascade');
+            $table->foreign('id_pengguna')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

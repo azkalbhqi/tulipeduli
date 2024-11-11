@@ -11,7 +11,7 @@
                 <div class="flex items-center text-sm  space-x-4 mb-4">
                     <p>✍️ Penulis: {{$blog['penulis']}}</p>
                     <p>•</p>
-                    <p class="text-sm">{{$blog['tanggal']}}</p>
+                    <p class="text-sm">{{$blog['created_at']}}</p>
                 </div>
 
                 <!-- Blog Summary -->

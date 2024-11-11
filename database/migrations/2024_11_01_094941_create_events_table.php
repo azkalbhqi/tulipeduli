@@ -21,8 +21,7 @@ return new class extends Migration
             $table->text('link_pendaftaran')->nullable();
             $table->unsignedBigInteger('id_admin');
             $table->unsignedBigInteger('id_komunitas');
-            $table->foreign('id_admin')->references('id')->on('admin')->onDelete('cascade');
-            $table->foreign('id_komunitas')->references('id')->on('komunitas')->onDelete('cascade');
+            $table->foreign('id_komunitas')->references('id')->on('communitys')->onDelete('cascade');
             $table->timestamps();
         });
     }

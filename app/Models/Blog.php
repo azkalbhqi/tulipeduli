@@ -2,18 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory; // Import HasFactory trait
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 
-class Blog extends Model{
+class Blog extends Model
+{
+    use HasFactory; // Add HasFactory trait to enable factory() method
     
-    // public static function find($slug){
-    //     $blog = Arr::first(Blog::all(), fn ($blog) => $blog['slug'] == $slug );
-    //     if(!$blog){
-    //         abort(404);
-    //     }
-    //     return $blog;
-    // }
+    protected $fillable = ['judul', 'konten', 'slug'];
 }
 
 ?>
