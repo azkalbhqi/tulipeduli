@@ -18,9 +18,8 @@ return new class extends Migration
             $table->text('konten');
             $table->unsignedBigInteger('penulis')->nullable(); // Allow penulis to be nullable
             $table->foreign('penulis')
-                  ->references('user_id')
-                  ->on('users')
-                  ->onDelete('set null');  // Optional: Sets penulis to null if the user is deleted
+                  ->references('id')
+                  ->on('users');
             $table->string('status', 50) ->default('Unverified');
             $table->timestamps();
         });

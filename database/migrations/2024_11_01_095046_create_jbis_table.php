@@ -17,8 +17,6 @@ return new class extends Migration
             $table->string('alamat', 255);
             $table->string('no_telp', 20)->nullable();
             $table->string('status', 50);
-            $table->unsignedBigInteger('id_pengguna');
-            $table->foreign('id_pengguna')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

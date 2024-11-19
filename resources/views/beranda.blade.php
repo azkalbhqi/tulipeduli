@@ -8,7 +8,7 @@
 </head>
 <body class="bg-slate-950 text-white font-sans">
     <!-- Navbar -->
-    <x-navbar></x-navbar>
+    <x-navbar-guest></x-navbar-guest>
 
     <!-- Hero Section -->
     <section class="text-center my-60">
