@@ -15,16 +15,18 @@
 
             <!-- Blog Content -->
             <div class="leading-relaxed mb-5 ">
-                <p> {{ $blog['konten'] }} </p>
+                <p class="text-justify"> {{ $blog['konten'] }} </p>
             </div>
 
-            <div>
+            <div class="flex justify-around">
                 
-                <a href="/blogs" class="text-blue-600 hover:text-blue-800 transition ease-in-out font-semibold">
+                <a href="/admin/blogs" class="text-blue-600 hover:text-blue-800 transition ease-in-out font-semibold">
                     &laquo; Kembali ke Semua Blog
                 </a>
 
-                <form action="{{ route('admin.blogs.destroy', $modul) }}" method="POST">
+                <a href="{{ route('admin.blogs.edit', $blog->slug) }}" class="bg-yellow-300 hover:bg-yellow-500 text-black m-2 px-4 py-2 font-bold">Edit</a>
+
+                <form action="{{ route('admin.blogs.destroy', $blog) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"

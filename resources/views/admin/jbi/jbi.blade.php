@@ -12,6 +12,9 @@
         <a href="{{ route('admin.jbis.index') }}" class="bg-blue-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-700 transition-all">
             Back to all jbis
         </a>
+
+        <a href="{{ route('admin.jbis.edit', $jbi->id) }}" class="bg-yellow-300 hover:bg-yellow-500 text-black m-2 px-4 py-2 font-bold">Edit</a>
+
         <form action="{{ route('admin.jbis.destroy', $jbi) }}" method="POST">
             @csrf
             @method('DELETE')

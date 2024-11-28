@@ -15,9 +15,9 @@ class BlogController extends Controller
         return view('blog.blogs',['title' => 'blog BISINDO'], compact('blogs'));
     }
 
-    public function show($id)
+    public function show($slug)
     {
-        $blog =Blog::findOrFail($id);
+        $blog =Blog::findOrFail($slug);
         return view('blog.blog',['title' => 'blog BISINDO'], compact('blog'));
     }
     public function adminIndex()
@@ -26,9 +26,9 @@ class BlogController extends Controller
         return view('admin.blogs.blogs',['title' => 'blog  '], compact('blogs'));
     }
 
-    public function adminShow($id)
+    public function adminShow($slug)
 {
-    $blog =Blog::findOrFail($id);
+    $blog = Blog::where('slug', $slug)->firstOrFail();
 
     return view('admin.blogs.blog', ['title' => 'blog'],compact('blog'));
 }
@@ -54,14 +54,37 @@ class BlogController extends Controller
             // Store the YouTube konten
         ]);
 
+        return redirect()->route('admin.blogs.index')->with('success', 'blog created successfully.');
+
     }
 
-    public function destroy(blog $blog)
-{
-    $blog->delete();
+    public function destroy(Blog $blog)
+    {
+        $blog->delete();
+        return redirect()->route('admin.blogs.index')->with('success', 'Blog deleted successfully.');
+    }
+    //
 
-    // Add a success message or redirect to a specific route
-    return redirect()->route('admin.blogs.blogs')->with('success', 'blog deleted successfully.');
-}
+    public function edit($slug)
+    {
+        $blog = Blog::where('slug', $slug)->firstOrFail();
+        return view('admin.blogs.edit', ['title' => 'Edit Blog'], compact('blog'));
+    }
+
+    public function update(Request $request, Blog $blog)
+    {
+        // Validate input data
+        $validated = $request->validate([
+            'judul' => 'required|string|max:255',
+            'konten' => 'required|string',
+            'slug' => 'required|string|max:255',
+        ]);
+    
+        // Update the blog
+        $blog->update($validated);
+    
+        // Redirect with success message
+        return redirect()->route('admin.blogs.index')->with('success', 'Blog updated successfully.');
+    }
 
 }

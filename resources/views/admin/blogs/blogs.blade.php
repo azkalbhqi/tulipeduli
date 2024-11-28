@@ -5,7 +5,7 @@
     <div class="p-10 flex flex-wrap justify-around max-w-screen-lg mx-auto gap-6">
     <button class="px-6 py-3 bg-gray-300 align-middle hover:bg-gray-400 text-black font-semibold rounded-md transition duration-300"
     onclick="window.location.href='/admin/blogs-create'">
-    + Modul
+    + Blogs
     </button>
     </div>
     <div class="p-10 max-w-screen-lg mx-auto">
@@ -27,7 +27,7 @@
                 </p>
 
                 <!-- Read More Link -->
-                <a href={{route('admin.blogs.blog', $blog->slug)}} class="text-blue-600 hover:text-blue-800 transition ease-in-out font-semibold">
+                <a href={{route('admin.blogs.show', $blog->slug)}} class="text-blue-600 hover:text-blue-800 transition ease-in-out font-semibold">
                     Read more &raquo;
                 </a>
             </article>

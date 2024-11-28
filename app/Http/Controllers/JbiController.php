@@ -51,14 +51,35 @@ class JbiController extends Controller
             'alamat' => $validated['alamat'], // Store the YouTube link
             'no_telp' => $validated['no_telp'], // Store the YouTube link
         ]);
-
+        return redirect()->route('admin.jbis.index')->with('success', 'jbi created successfully.');
     }
 
-    public function destroy(jbi $jbi)
-{
+    public function destroy(jbi $jbi){
     $jbi->delete();
 
     // Add a success message or redirect to a specific route
-    return redirect()->route('admin.jbi.jbis')->with('success', 'jbi deleted successfully.');
-}
+    return redirect()->route('admin.jbis.index')->with('success', 'jbi deleted successfully.');
+    }
+
+    public function edit($id)
+    {
+        $jbi = Jbi::where('id', $id)->firstOrFail();
+        return view('admin.jbi.edit', ['title' => 'Edit Blog'], compact('jbi'));
+    }
+
+    public function update(Request $request, Jbi $jbi)
+    {
+        // Validate input data
+        $validated = $request->validate([
+            'nama' => 'required|string|max:255',
+            'alamat' => 'required|string',
+            'no_telp' => 'required|string|max:255',
+        ]);
+    
+        // Update the blog
+        $jbi->update($validated);
+    
+        // Redirect with success message
+        return redirect()->route('admin.jbis.index')->with('success', 'Blog updated successfully.');
+    }
 }

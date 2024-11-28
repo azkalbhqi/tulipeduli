@@ -4,7 +4,7 @@
 
         <button class="px-6 py-3 bg-gray-300 align-middle hover:bg-gray-400 text-black font-semibold rounded-md transition duration-300"
             onclick="window.location.href='/admin/jbis-create'">
-        + Modul
+        + JBI
         </button>
     </div>
     <div class="p-10 flex flex-wrap justify-around max-w-screen-lg mx-auto gap-6">

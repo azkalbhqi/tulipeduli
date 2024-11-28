@@ -20,7 +20,7 @@
             <!-- Link Field (YouTube video link) -->
             <div class="mb-4">
                 <label for="link" class="block text-sm font-medium text-white">Konten</label>
-                <input type="text" name="konten" id="konten" class="mt-1 block w-full p-2 h-48 border rounded-md text-black" required>
+                <textarea name="konten" id="konten" class="form-control text-black mt-2 p-2 border rounded-md w-full" rows="5" required></textarea>
                 @error('link')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror

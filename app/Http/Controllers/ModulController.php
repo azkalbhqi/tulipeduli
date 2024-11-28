@@ -36,7 +36,7 @@ class ModulController extends Controller
     }
     
     public function store(Request $request)
-    {
+{
         // Validate the form input
         $validated = $request->validate([
             'title' => 'required|string|max:255',
@@ -47,16 +47,19 @@ class ModulController extends Controller
         Modul::create([
             'title' => $validated['title'],
             'links' => $validated['link'], // Store the YouTube link
+            
         ]);
+        return redirect()->route('admin.moduls.index')->with('success', 'Modul created successfully.');
+
+        
 
     }
 
-    public function destroy(Modul $modul)
-{
+    public function destroy(Modul $modul){
     $modul->delete();
 
     // Add a success message or redirect to a specific route
-    return redirect()->route('admin.modul.moduls')->with('success', 'Modul deleted successfully.');
-}
+    return redirect()->route('admin.moduls.index')->with('success', 'Modul deleted successfully.');
+    }
 
 }
