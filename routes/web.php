@@ -7,6 +7,7 @@ use App\Http\Controllers\JbiController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
 use App\Models\Blog;
+use App\Models\Jbi;
 
 Route::get('/', function () {
     return view('beranda');
@@ -81,9 +82,9 @@ Route::get('/moduls', [ModulController::class, 'index'])->name('moduls.index');
 Route::get('/moduls/{id}', [ModulController::class, 'show'])->name('moduls.show');
 
 // Jbi Route
-Route::get('/jbi', function () {
-    return view('jbi', ['title' => 'Pemesanan JBI']);
-});
+Route::get('/jbi', [JbiController::class, 'index'])->name('jbis.index');
+Route::get('/jbi/{id}', [JbiController::class, 'show'])->name('jbis.show');
+
 
 // Blog Routes
 Route::get('/blogs', function () {

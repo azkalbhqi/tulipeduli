@@ -11,7 +11,7 @@ class JbiController extends Controller
     public function index()
     {
         $jbis = Jbi::all();
-        return view('jbi.jbis$jbis',['title' => 'Halaman jbi'], compact('jbis'));
+        return view('jbi.jbis',['title' => 'Halaman jbi'], compact('jbis'));
     }
 
     public function show($id)

@@ -1,6 +1,6 @@
 <x-layout-admin>
     <x-slot:title> {{$title}} </x-slot:title>
-    <h1>INIADMINNNNN</h1>
+
 
     <h1 class="text-3xl font-bold text-center text-blue-600 my-8">{{ $modul->title }}</h1>
     <div class="flex justify-center">

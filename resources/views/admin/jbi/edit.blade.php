@@ -3,7 +3,7 @@
 
     <!-- Create Modul Form -->
     <div class="max-w-screen-lg mx-auto p-6">
-        <h1>INII EDIIITTT</h1>
+       
         <!-- Success Message -->
         @if(session('success'))
             <div class="alert alert-success bg-green-500 text-white p-4 rounded-md mb-4">
