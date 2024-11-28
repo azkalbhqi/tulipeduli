@@ -22,29 +22,7 @@
         </div>
     </section>
 
-    <!-- Content Section -->
-    <section class="grid grid-cols-3 gap-6 px-6">
-        <!-- Top boxes -->
-        <div class="col-span-2 grid grid-cols-2 gap-4">
-            <div class="bg-gray-300 h-32 rounded-md"></div>
-            <div class="bg-gray-300 h-32 rounded-md"></div>
-            <div class="bg-gray-300 h-32 rounded-md"></div>
-            <div class="bg-gray-300 h-32 rounded-md"></div>
-        </div>
-        <!-- Bottom boxes -->
-        <div class="col-span-1 grid grid-rows-2 gap-4">
-            <div class="bg-gray-300 h-32 rounded-md"></div>
-            <div class="bg-gray-300 h-32 rounded-md"></div>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <section class="grid grid-cols-4 gap-4 mt-10 px-6">
-        <div class="bg-gray-300 h-16 rounded-md col-span-1"></div>
-        <div class="bg-gray-300 h-16 rounded-md col-span-1"></div>
-        <div class="bg-gray-300 h-16 rounded-md col-span-1"></div>
-        <div class="bg-gray-300 h-16 rounded-md col-span-1"></div>
-    </section>
+    
 
 </body>
 </html>

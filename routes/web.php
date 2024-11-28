@@ -40,8 +40,6 @@ Route::prefix('admin')->group(function () {
     Route::post('blogs-create', [BlogController::class, 'store'])->name('admin.blogs.store');
     Route::post('jbi-create', [JbiController::class, 'store'])->name('admin.jbis.store');
 
-    
-
     //delete
     Route::delete('/admin/moduls/{modul}', [ModulController::class, 'destroy'])->name('admin.moduls.destroy');
     Route::get('/moduls/{modul}', [ModulController::class, 'adminShow'])->name('admin.moduls.show');
@@ -60,7 +58,9 @@ Route::prefix('admin')->group(function () {
     Route::get('/jbis/{id}/edit', [JbiController::class, 'edit'])->name('admin.jbis.edit');
     Route::put('/jbis/{jbi}', [JbiController::class, 'update'])->name('admin.jbis.update');
 
-
+    Route::get('/profile', [ProfileController::class, 'adminEdit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
 });
 
