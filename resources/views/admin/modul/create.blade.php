@@ -28,7 +28,7 @@
 
             <!-- Submit Button -->
             <div class="flex justify-center">
-                <button type="submit" onclick="window.location.href='/admin/moduls'" class="bg-blue-600 text-white py-2 px-6 rounded-md shadow-md hover:bg-blue-700">
+                <button type="submit" class="bg-blue-600 text-white py-2 px-6 rounded-md shadow-md hover:bg-blue-700">
                     Create Modul
                 </button>
             </div>

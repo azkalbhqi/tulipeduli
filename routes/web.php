@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ModulController;
 use App\Http\Controllers\JbiController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BlogController;
 use App\Models\Blog;
 
 Route::get('/', function () {
@@ -15,23 +16,43 @@ Route::get('/', function () {
 Route::middleware(['auth', 'is_admin'])->prefix('admin')->name('admin.')->group(function () {
     // Admin dashboard route
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+
     Route::get('/moduls', [ModulController::class, 'adminIndex'])->name('admin.moduls.index');
     Route::get('/moduls/{id}', [ModulController::class, 'adminShow'])->name('admin.moduls.show');
     Route::get('moduls-create', [ModulController::class, 'create'])->name('create');
+    
+    Route::get('/blogs', [BlogController::class, 'adminIndex'])->name('admin.blogs.blogs');
+    Route::get('/blogs/{slug}', [BlogController::class, 'adminShow'])->name('admin.blogs.blog');
+    Route::get('blogs-create', [BlogController::class, 'create'])->name('create');
+
+    Route::get('/jbis', [JbiController::class, 'adminIndex'])->name('admin.jbis.index');
+    Route::get('/jbis/{id}', [JbiController::class, 'adminShow'])->name('admin.jbis.show');
+    Route::get('jbis-create', [JbiController::class, 'create'])->name('create');
 
     
-    
-    // Store the Modul
-    Route::post('moduls', [ModulController::class, 'store'])->name('moduls.store');
     
 });
 
 Route::prefix('admin')->group(function () {
-    // Admin routes here, including:
+    // Admin routes here, including: 
+    Route::post('moduls-create', [ModulController::class, 'store'])->name('admin.moduls.store');
+    Route::post('blogs-create', [BlogController::class, 'store'])->name('admin.blogs.store');
+    Route::post('jbi-create', [JbiController::class, 'store'])->name('admin.jbis.store');
     //delete
     Route::delete('/admin/moduls/{modul}', [ModulController::class, 'destroy'])->name('admin.moduls.destroy');
     Route::get('/moduls/{modul}', [ModulController::class, 'adminShow'])->name('admin.moduls.show');
     Route::get('/moduls', [ModulController::class, 'adminIndex'])->name('admin.moduls.index');
+
+    Route::delete('/admin/blogs/{modul}', [BlogController::class, 'destroy'])->name('admin.blogs.destroy');
+    Route::get('/blogs', [BlogController::class, 'adminIndex'])->name('admin.blogs.blogs');
+    Route::get('/blogs/{blog}', [BlogController::class, 'adminShow'])->name('admin.blogs.blog');
+
+    Route::delete('/admin/jbis/{modul}', [JbiController::class, 'destroy'])->name('admin.jbis.destroy');
+    Route::get('/jbis', [JbiController::class, 'adminIndex'])->name('admin.jbis.index');
+    Route::get('/jbis/{jbi}', [JbiController::class, 'adminShow'])->name('admin.jbis.show');
+
+
+    
 });
 
 Route::get('/dashboard', function(){
