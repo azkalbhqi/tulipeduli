@@ -1,7 +1,6 @@
 <x-layout-app>
 
 
-
     <!-- Hero Section -->
     <section class="text-center my-60">
         <h1 class="text-4xl font-bold text-white">

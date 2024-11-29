@@ -10,7 +10,7 @@
 </head>
 <body class="bg-slate-950 text-white text-bold font-sans">
     <!-- Navbar -->
-    <x-navbar>  </x-navbar>
+    <x-navbar-guest>  </x-navbar-guest>
 
     {{ $slot }}
 

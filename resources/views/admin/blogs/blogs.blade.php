@@ -1,6 +1,5 @@
 <x-layout-admin>
     <x-slot:title> {{$title}} </x-slot:title>
-    <h1>INI ADMINNNNNNNN</h1>
 
     <div class="p-10 flex flex-wrap justify-around max-w-screen-lg mx-auto gap-6">
     <button class="px-6 py-3 bg-gray-300 align-middle hover:bg-gray-400 text-black font-semibold rounded-md transition duration-300"

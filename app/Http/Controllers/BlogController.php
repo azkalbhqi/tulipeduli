@@ -12,25 +12,25 @@ class BlogController extends Controller
     public function index()
     {
         $blogs =Blog::all();
-        return view('blog.blogs',['title' => 'blog BISINDO'], compact('blogs'));
+        return view('blog.blogs',['title' => 'Halaman Berita'], compact('blogs'));
     }
 
     public function show($slug)
     {
         $blog =Blog::findOrFail($slug);
-        return view('blog.blog',['title' => 'blog BISINDO'], compact('blog'));
+        return view('blog.blog',['title' => 'Halaman Berita'], compact('blog'));
     }
     public function adminIndex()
     {
         $blogs =Blog::all();
-        return view('admin.blogs.blogs',['title' => 'blog  '], compact('blogs'));
+        return view('admin.blogs.blogs',['title' => 'Halaman Admin Berita  '], compact('blogs'));
     }
 
     public function adminShow($slug)
 {
     $blog = Blog::where('slug', $slug)->firstOrFail();
 
-    return view('admin.blogs.blog', ['title' => 'blog'],compact('blog'));
+    return view('admin.blogs.blog', ['title' => 'Halaman Admin Berita'],compact('blog'));
 }
     public function create()
     {

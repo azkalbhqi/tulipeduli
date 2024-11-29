@@ -1,4 +1,4 @@
-<x-layout-app>
+<x-layout>
     <x-slot name="header">
         <h1 class="text-4xl font-bold">{{ __('Welcome to TuliPeduli') }}</h1>
     </x-slot>
@@ -78,4 +78,5 @@
             </div>
         </footer>
     </div>
-</x-layout-app>
+    <x-slot:title> {{$title}} </x-slot:title>
+</x-layout>

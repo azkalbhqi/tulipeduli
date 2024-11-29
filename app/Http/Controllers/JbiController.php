@@ -11,29 +11,29 @@ class JbiController extends Controller
     public function index()
     {
         $jbis = Jbi::all();
-        return view('jbi.jbis',['title' => 'Halaman jbi'], compact('jbis'));
+        return view('jbi.jbis',['title' => 'Halaman JBI'], compact('jbis'));
     }
 
     public function show($id)
     {
         $jbi = Jbi::findOrFail($id);
-        return view('jbi.jbi',['title' => 'Halaman jbi'], compact('jbi'));
+        return view('jbi.jbi',['title' => 'Halaman JBI'], compact('jbi'));
     }
     public function adminIndex()
     {
         $jbis = Jbi::all();
-        return view('admin.jbi.jbis',['title' => 'Halaman jbi'], compact('jbis'));
+        return view('admin.jbi.jbis',['title' => 'Halaman JBI'], compact('jbis'));
     }
 
     public function adminShow($id)
 {
     $jbi = Jbi::findOrFail($id);
 
-    return view('admin.jbi.jbi', ['title' => 'Halaman jbi'],compact('jbi'));
+    return view('admin.jbi.jbi', ['title' => 'Halaman JBI'],compact('jbi'));
 }
     public function create()
     {
-        return view('admin.jbi.create', ['title' => 'Buat jbi']);
+        return view('admin.jbi.create', ['title' => 'Buat JBI']);
     }
     
     public function store(Request $request)
