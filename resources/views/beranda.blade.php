@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TuliPeduli | Jasa Bahasa Isyarat & Komunitas Tuli</title>
-    @vite('resources/css/app.css')
-</head>
-<body class="bg-slate-950 text-white font-sans">
-    <!-- Navbar -->
-    <x-navbar-guest></x-navbar-guest>
+<x-app-layout>
+
+
 
     <!-- Hero Section -->
     <section class="text-center my-60">
@@ -80,5 +72,6 @@
             <a href="#" class="text-purple-500 mx-2 hover:underline">Twitter</a>
         </div>
     </footer>
-</body>
-</html>
+
+</x-app-layout>
+
