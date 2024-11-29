@@ -15,7 +15,7 @@
 
             <!-- Blog Content -->
             <div class="leading-relaxed mb-5 ">
-                <p> {{ $blog['konten'] }} </p>
+                <p class="text-justify" > {{ $blog['konten'] }} </p>
             </div>
 
             <!-- Back Button -->
