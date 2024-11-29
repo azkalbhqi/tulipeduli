@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-layout-app>
 
 
 
@@ -73,5 +73,5 @@
         </div>
     </footer>
 
-</x-app-layout>
+</x-layout-app>
 
