@@ -28,10 +28,14 @@
 
             <div class="mb-4">
                 <label for="link" class="block text-sm font-medium text-white">No_telp</label>
-                <input type="text" name="no_telp" id="no_telp" class="mt-1 block w-full p-2 border rounded-md text-black" required>
-                @error('no_telp')
-                    <span class="text-red-500 text-sm">{{ $message }}</span>
-                @enderror
+                <div class="flex justify-start">
+
+                    <h1 class="text-2xl pr-2 align-middle py-2">+62</h1>
+                    <input type="text" name="no_telp" id="no_telp" class="mt-1 block w-full p-2 border rounded-md text-black" required>
+                    @error('no_telp')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
             </div>
 
             <!-- Submit Button -->

@@ -8,9 +8,18 @@
         <!-- Card Section -->
         <div class="shadow-xl bg-slate-900 rounded-lg w-1/3 p-6">
             <div class="text-center">
-                <h2 class="text-2xl font-semibold ">{{ $jbi->nama }}</h2>
-                <p class="text-lg mt-2">Alamat: {{ $jbi->alamat }}</p>
-                <p class="text-lg mt-1">+62{{ $jbi->no_telp }}</p>
+                <div class=" flex text-justify justify-center">
+                    <h1 class="mt-4 mr-2 text-center text-lg font-bold text-gray-100">Nama :</h1>
+                    <h1 class="mt-4 text-center text-lg font-bold text-gray-100">{{ $jbi->nama }}</h1>
+                </div>
+                <div class=" flex text-justify justify-center">
+                    <h1 class="mt-4 mr-2 text-center text-lg font-bold text-gray-100">Alamat :</h1>
+                    <h3 class="mt-4 text-center text-lg font-semibold text-gray-100">{{ $jbi->alamat }}</h3>
+                </div>
+                <div class=" flex text-justify justify-center">
+                    <h1 class="mt-4 mr-2 text-center text-lg font-bold text-gray-100"> No. telepon :</h1>
+                    <h3 class="mt-4 text-center text-lg font-semibold text-gray-100"> 0{{ $jbi->no_telp }}</h3>
+                </div>
             </div>
 
             <div class="mt-8 p-5 flex justify-between">

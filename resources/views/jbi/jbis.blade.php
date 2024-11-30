@@ -7,7 +7,7 @@
             <a href="{{ route('jbis.show', $jbi->id) }}">
                 <h1 class="mt-4 text-center text-lg font-semibold text-gray-100">{{ $jbi->nama }}</h1>
                 <h3 class="mt-4 text-center text-md text-gray-100">{{ $jbi->alamat }}</h3>
-                <h3 class="mt-4 text-center text-md font-semibold text-gray-100">{{ $jbi->no_telp }}</h3>
+                <h3 class="mt-4 text-center text-md font-semibold text-gray-100">0{{ $jbi->no_telp }}</h3>
                 
             </a>
         </div>
